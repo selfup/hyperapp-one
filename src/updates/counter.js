@@ -3,4 +3,4 @@ const update = {
   sub: model => model - 1,
 };
 
-export default update;
+module.exports = update;

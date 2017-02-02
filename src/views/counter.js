@@ -17,4 +17,4 @@ const view = (model, msg) => (html`
   </div>
 `);
 
-export default view;
+module.exports = view;
