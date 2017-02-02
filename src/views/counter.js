@@ -7,10 +7,10 @@ const view = (model, msg) => (html`
     >
       +
     </button>
-    <h1>${model}</h1>
+    <h1>${model.num}</h1>
     <button
       onclick=${msg.sub}
-      disabled=${model <= 0}
+      disabled=${model.num <= 0}
     >
       -
     </button>

@@ -1,1 +1,5 @@
-export default 0;
+const model = {
+  num: 0,
+};
+
+export default model;
