@@ -1,4 +1,4 @@
-# HyperApp Boilerplate Repo
+# [HyperApp](https://github.com/hyperapp/hyperapp) Boilerplate Repo
 
 ### To get started:
 
