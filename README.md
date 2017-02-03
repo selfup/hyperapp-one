@@ -1,6 +1,6 @@
 # [HyperApp](https://github.com/hyperapp/hyperapp) Boilerplate Repo
 
-### To get started:
+## To get started:
 
 ```bash
 npm install
@@ -13,7 +13,7 @@ This will reload as you save new code :smile:
 
 **Now go code something awesome!**
 
-### To wipe commit history
+## To wipe commit history:
 
 **Make sure you are in the boilerplate root:**
 
