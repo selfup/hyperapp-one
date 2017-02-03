@@ -1,12 +1,6 @@
 const update = {
-  add: (model) => {
-    const { num } = model;
-    return { num: num + 1 };
-  },
-  sub: (model) => {
-    const { num } = model;
-    return { num: num - 1 };
-  },
+  add: ({ num }) => ({ num: num + 1 }),
+  sub: ({ num }) => ({ num: num - 1 }),
 };
 
 export default update;
