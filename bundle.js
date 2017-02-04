@@ -63,22 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = {
-    app: __webpack_require__(5),
-    html: __webpack_require__(6),
-    h: __webpack_require__(1)
-}
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports) {
 
 module.exports = function (tag, data, tree) {
@@ -106,61 +95,43 @@ function svg(tag, data, tree) {
 
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = {
+    app: __webpack_require__(4),
+    html: __webpack_require__(5),
+    h: __webpack_require__(0)
+}
+
+
+/***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-const model = {
-  num: 0,
-};
-
-/* harmony default export */ __webpack_exports__["a"] = model;
-
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const update = {
-  add: ({ num }) => ({ num: num + 1 }),
-  sub: ({ num }) => ({ num: num - 1 }),
-};
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hyperapp__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__updates_counter__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_counter__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_counter__ = __webpack_require__(10);
 
-/* harmony default export */ __webpack_exports__["a"] = update;
+
+
+
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_hyperapp__["app"])({ model: __WEBPACK_IMPORTED_MODULE_2__models_counter__["a" /* default */], update: __WEBPACK_IMPORTED_MODULE_1__updates_counter__["a" /* default */], view: __WEBPACK_IMPORTED_MODULE_3__views_counter__["a" /* default */] });
 
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hyperapp__);
-
-
-const view = (model, msg) => (__WEBPACK_IMPORTED_MODULE_0_hyperapp__["html"]`
-  <div>
-    <button
-      onclick=${msg.add}
-    >
-      +
-    </button>
-    <h1>${model.num}</h1>
-    <button
-      onclick=${msg.sub}
-      disabled=${model.num <= 0}
-    >
-      -
-    </button>
-  </div>
-`);
-
-/* harmony default export */ __webpack_exports__["a"] = view;
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = function (options) {
@@ -441,14 +412,14 @@ module.exports = function (options) {
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8)(__webpack_require__(1))
+module.exports = __webpack_require__(7)(__webpack_require__(0))
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = attributeToProperty
@@ -473,10 +444,10 @@ function attributeToProperty (h) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var attrToProp = __webpack_require__(7)
+var attrToProp = __webpack_require__(6)
 
 var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
 var ATTR_KEY = 5, ATTR_KEY_W = 6
@@ -742,22 +713,71 @@ function selfClosing (tag) { return closeRE.test(tag) }
 
 
 /***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const model = {
+  num: 0,
+};
+
+/* harmony default export */ __webpack_exports__["a"] = model;
+
+
+/***/ }),
 /* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
+const update = {
+  add: ({ num }) => ({ num: num + 1 }),
+  sub: ({ num }) => ({ num: num - 1 }),
+};
+
+/* harmony default export */ __webpack_exports__["a"] = update;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hyperapp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__updates_counter__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_counter__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_counter__ = __webpack_require__(4);
 
 
+const view = (model, msg) => (__WEBPACK_IMPORTED_MODULE_0_hyperapp__["html"]`
+  <div class="counter">
+    <h1>Welcome to the hyperapp-one boilerplate!</h1>
+    <hr class="line-break" />
+    <section>
+      <button
+        class="add"
+        onclick=${msg.add}
+      >
+        +
+      </button>
+      <h1>${model.num}</h1>
+      <button
+        class="sub"
+        onclick=${msg.sub}
+        disabled=${model.num <= 0}
+      >
+        -
+      </button>
+    </section>
+  </div>
+`);
+
+/* harmony default export */ __webpack_exports__["a"] = view;
 
 
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_hyperapp__["app"])({ model: __WEBPACK_IMPORTED_MODULE_2__models_counter__["a" /* default */], update: __WEBPACK_IMPORTED_MODULE_1__updates_counter__["a" /* default */], view: __WEBPACK_IMPORTED_MODULE_3__views_counter__["a" /* default */] });
+__webpack_require__(3);
+module.exports = __webpack_require__(2);
 
 
 /***/ })
