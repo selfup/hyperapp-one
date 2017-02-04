@@ -123,14 +123,8 @@ const model = {
 
 "use strict";
 const update = {
-  add: (model) => {
-    const { num } = model;
-    return { num: num + 1 };
-  },
-  sub: (model) => {
-    const { num } = model;
-    return { num: num - 1 };
-  },
+  add: ({ num }) => ({ num: num + 1 }),
+  sub: ({ num }) => ({ num: num - 1 }),
 };
 
 /* harmony default export */ __webpack_exports__["a"] = update;
