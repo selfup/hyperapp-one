@@ -32,7 +32,15 @@ Then work as normal and don't forget to add the new remote before pushing up!
 
 ### Deploy to GitHub Pages:
 
-First Time:
+***
+
+*If you are not using JSX please use `npm run hyper-build` instead of `npm run build`*
+
+This will transform template tag literals into `h()` calls for maximum performance!
+
+***
+
+**First Time**:
 
 ```bash
 git checkout -b gh-pages
@@ -41,7 +49,7 @@ git add . && git commit -m "built"
 git push origin gh-pages
 ```
 
-Every time after that:
+**Every time after that**:
 
 ```bash
 git checkout gh-pages
