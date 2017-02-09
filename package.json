@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack",
-    "minify": "webpack --env.minify",
+    "build": "webpack --env.minify",
     "test": "echo 'FOR TRAVIS CI ONLY PLZ USE YOUR OWN TESTS :)' && npm run build && rm ./bundle.css && rm ./bundle.js && touch ./bundle.css && touch ./bundle.js && echo 'SUCCESS!'"
   },
   "author": "",
