@@ -38,9 +38,9 @@ Then work as normal and don't forget to add the new remote before pushing up!
 
 *If you are not using JSX please use `npm run hyper-build` instead of `npm run build`*
 
-The repo contains JSX for the `counter.js` view. Here is a gist of the same view in a: [template tag literal](https://gist.github.com/selfup/bbf5c07bbac447e36f7e86f73d29754a)
+*This will transform `template tag literals` into raw `h` calls!*
 
-This will transform `template tag literals` into raw `h`!
+The repo contains JSX for the `counter.js` view. Here is a gist of the same view in a: [template tag literal](https://gist.github.com/selfup/bbf5c07bbac447e36f7e86f73d29754a)
 
 ***
 
