@@ -1,14 +1,14 @@
 {
-  "name": "hyper-one",
+  "name": "hyperapp-one",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --env.minify",
-    "test": "echo 'FOR TRAVIS CI ONLY PLZ USE YOUR OWN TESTS :)' && npm run build && rm ./bundle.css && rm ./bundle.js && touch ./bundle.css && touch ./bundle.js && echo 'SUCCESS!'"
+    "test": "echo 'FOR TRAVIS CI ONLY PLZ USE YOUR OWN TESTS :)' && npm run build && echo 'SUCCESS!'"
   },
-  "author": "",
+  "author": "Regis Boudinot (selfup)",
   "license": "MIT",
   "dependencies": {
     "hyperapp": "0.0.9"
