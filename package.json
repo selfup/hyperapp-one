@@ -6,6 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --env.minify",
+    "hyper-precompile": "browserify src/index.js -o bundle.pre.build.js -t [ babelify --presets [ es2015 ] ]",
+    "hyper-compile": "npm run hyper-precompile && browserify -t hyperxify -g uglifyify bundle.pre.build.js | uglifyjs > bundle.js",
+    "hyper-build": " npm run hyper-compile && rm bundle.pre.build.js",
     "test": "echo 'FOR TRAVIS CI ONLY PLZ USE YOUR OWN TESTS :)' && npm run build && echo 'SUCCESS!'"
   },
   "author": "Regis Boudinot (selfup)",
@@ -19,14 +22,19 @@
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-react-jsx": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
     "babili-webpack-plugin": "0.0.10",
+    "browserify": "^14.0.0",
     "css-loader": "^0.26.1",
     "eslint": "^3.14.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "hyperxify": "^2.0.1",
     "imports": "^1.0.0",
     "node-libs-browser": "^2.0.0",
+    "uglifyify": "^3.0.4",
+    "uglifyjs": "^2.4.10",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.10.1"
   }
