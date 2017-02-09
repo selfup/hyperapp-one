@@ -8,8 +8,8 @@
     "build": "webpack --env.minify",
     "hyper-precompile": "browserify src/index.js -o bundle.pre.build.js -t [ babelify --presets [ es2015 ] ]",
     "hyper-compile": "npm run hyper-precompile && browserify -t hyperxify -g uglifyify bundle.pre.build.js | uglifyjs > bundle.js",
-    "hyper-build": " npm run hyper-compile && rm bundle.pre.build.js",
-    "test": "echo 'FOR TRAVIS CI ONLY PLZ USE YOUR OWN TESTS :)' && npm run build && echo 'SUCCESS!'"
+    "hyper-build": "npm run build && rm bundle.js && npm run hyper-compile && rm bundle.pre.build.js",
+    "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && npm run hyper-build && rm bundle.css bundle.js && echo 'SUCCESS!'"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
