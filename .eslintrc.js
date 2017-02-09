@@ -1,9 +1,14 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ],
-    "rules": {
-        "linebreak-style": "off",
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "linebreak-style": "off",
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     }
+  }
 };
