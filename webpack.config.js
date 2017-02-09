@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BabiliPlugin = require('babili-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -13,6 +14,19 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: [
+            'es2015',
+          ],
+          plugins: [],
+        },
+        include: [
+          path.resolve(__dirname, 'app'),
+        ],
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: 'css-loader?importLoaders=1',
@@ -25,5 +39,6 @@ module.exports = {
       filename: './bundle.css',
       allChunks: true,
     }),
+    new BabiliPlugin(),
   ],
 };
