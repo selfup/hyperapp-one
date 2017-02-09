@@ -58,4 +58,4 @@ Now go visit:
 
 ### GIF:
 
-![basic gif of app](https://cloud.githubusercontent.com/assets/9837366/22621800/117867c0-eae9-11e6-8a25-8aad7d120ac2.gif)
+![basic gif of app](https://cloud.githubusercontent.com/assets/9837366/22784577/cdcf4c84-ee8d-11e6-98ca-89fe3b387cf1.gif)
