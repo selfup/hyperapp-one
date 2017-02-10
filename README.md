@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one)
 
-# [HyperApp](https://github.com/hyperapp/hyperapp) Boilerplate Repo
+# [HyperApp](https://github.com/hyperapp/hyperapp) JSX Boilerplate Repo
 
 *With JSX*
 
@@ -33,16 +33,6 @@ git commit -m "initial commit"
 Then work as normal and don't forget to add the new remote before pushing up!
 
 ### Deploy to GitHub Pages:
-
-***
-
-*If you are not using JSX please use `npm run hyper-build` instead of `npm run build`*
-
-*This will transform `template tag literals` into raw `h` calls!*
-
-The repo contains JSX for the `counter.js` view. Here is a gist of the same view in a: [template tag literal](https://gist.github.com/selfup/bbf5c07bbac447e36f7e86f73d29754a)
-
-***
 
 **First Time**:
 
