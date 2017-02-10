@@ -28,7 +28,7 @@
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
-    "hyperxify": "^2.0.1",
+    "hyperxify": "hyperapp/hyperxify",
     "imports": "^1.0.0",
     "node-libs-browser": "^2.0.0",
     "uglifyify": "^3.0.4",
