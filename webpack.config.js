@@ -7,21 +7,17 @@ const plugins = [
     filename: './bundle.css',
     allChunks: true,
   }),
+  new BabiliPlugin(),
 ];
 
-module.exports = function webpackStuff(env) {
-  const bundle = { name: 'bundle.js' };
-
-  if (env && env.minify) plugins.push(new BabiliPlugin());
-  if (env && env.hyper) bundle.name = '.bundle.js';
-
+module.exports = function webpackStuff() {
   return {
     entry: [
       './src/index.js',
       './styles/app.css',
     ],
     output: {
-      filename: `${bundle.name}`,
+      filename: 'bundle.js',
       path: path.resolve(__dirname, './'),
     },
     module: {
