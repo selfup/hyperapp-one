@@ -30,6 +30,8 @@ git commit -m "initial commit"
 
 Then work as normal and don't forget to add the new remote before pushing up!
 
+***
+
 ### Deploy to GitHub Pages:
 
 **First Time**:
@@ -56,6 +58,8 @@ git push origin gh-pages
 (No custom domain) -> `<your_username>.github.io/<your_repo_name>`
 
 (Custom domain) -> `<custom_domain>/<your_repo_name>`
+
+***
 
 ### Example GIF:
 
