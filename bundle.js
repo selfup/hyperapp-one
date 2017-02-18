@@ -70,27 +70,26 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = function (tag, data, tree) {
-    if (tag === "svg") {
-        svg(tag, data, tree)
-    }
+const svg = (tag, data, tree) => {
+	data.ns = "http://www.w3.org/2000/svg"
 
-    return {
-        tag: tag,
-        data: data || {},
-        tree: [].concat.apply([], tree)
-    }
+	tree.forEach(node => {
+		if (node.data) {
+			svg(node.tag, node.data, node.tree)
+		}
+	})
 }
 
-function svg(tag, data, tree) {
-    data.ns = "http://www.w3.org/2000/svg"
+module.exports = function (tag, data, tree) {
+	if (tag === "svg") {
+		svg(tag, data, tree)
+	}
 
-    for (var i = 0; i < tree.length; i++) {
-        var node = tree[i]
-        if (node.data) {
-            svg(node.tag, node.data, node.tree)
-        }
-    }
+	return {
+		tag: tag,
+		data: data || {},
+		tree: [].concat.apply([], tree)
+	}
 }
 
 
@@ -98,12 +97,11 @@ function svg(tag, data, tree) {
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = {
-    app: __webpack_require__(4),
-    html: __webpack_require__(5),
-    h: __webpack_require__(0)
-}
+const app = __webpack_require__(4)
+const html = __webpack_require__(5)
+const h = __webpack_require__(0)
 
+module.exports = { app, html, h }
 
 /***/ }),
 /* 2 */
@@ -134,280 +132,257 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_hyperapp__["app"])({ model: __
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = function (options) {
-    var msg = {}
+module.exports = options => {
+	const defer = (fn, data) => {
+		setTimeout(_ => fn(data), 0)
+	}
 
-    var model = options.model
-    var reducers = options.update || {}
-    var effects = options.effects || {}
-    var subs = options.subs || {}
+	const merge = (a, b) => {
+		var obj = {}, key
 
-    var hooks = merge({
-        onAction: Function.prototype,
-        onUpdate: Function.prototype,
-        onError: function (err) {
-            throw err
-        }
-    }, options.hooks)
+		if (isPrimitive(typeof b) || Array.isArray(b)) {
+			return b
+		}
 
-    var node
-    var root = options.root || document.body.appendChild(document.createElement("div"))
-    var view = options.view || function () {
-        return root
-    }
-    var routes = typeof view === "function" ? undefined : view
+		for (key in a) {
+			obj[key] = a[key]
+		}
+		for (key in b) {
+			obj[key] = b[key]
+		}
 
-    if (routes) {
-        view = route(routes, getHashOrPath())
+		return obj
+	}
 
-        msg.setLocation = function (data) {
-            if (history && history.pushState) {
-                render(model, view = route(routes, data), node)
-                history.pushState({}, "", data)
+	const isPrimitive = type => type === "string" || type === "number" || type === "boolean"
 
-            } else {
-                window.location.hash = data
-            }
-        }
+	const render = (model, view, lastNode) => {
+		patch(root, node = view(model, msg), lastNode, 0)
+	}
 
-        window[history && history.pushState ? "onpopstate" : "onhashchange"] = function () {
-            render(model, view = route(routes, getHashOrPath()), node)
-        }
+	const shouldUpdate = (a, b) => a.tag !== b.tag || typeof a !== typeof b || isPrimitive(typeof a) && a !== b
 
-        window.onclick = function (e) {
-            if (e.metaKey || e.shiftKey || e.ctrlKey || e.altKey) {
-                return
-            }
+	const patch = (parent, node, oldNode, index) => {
+		if (oldNode === undefined) {
+			parent.appendChild(createElementFrom(node))
 
-            var target = e.target
+		} else if (node === undefined) {
+			while (index > 0 && !parent.childNodes[index]) {
+				index--
+			}
 
-            while (target && target.localName !== "a") {
-                target = target.parentNode
-            }
+			if (index >= 0) {
+				var element = parent.childNodes[index]
 
-            if (target && target.host === location.host
-                && !target.hasAttribute("data-no-routing")) {
+				if (oldNode && oldNode.data) {
+					var hook = oldNode.data.onremove
+					if (hook) {
+						defer(hook, element)
+					}
+				}
 
-                var element = target.hash === "" ? element : document.querySelector(target.hash)
-                if (element) {
-                    element.scrollIntoView(true)
+				parent.removeChild(element)
+			}
 
-                } else {
-                    msg.setLocation(target.pathname)
-                    return false
-                }
-            }
-        }
+		} else if (shouldUpdate(node, oldNode)) {
+			parent.replaceChild(createElementFrom(node), parent.childNodes[index])
 
-        function getHashOrPath() {
-            return location.hash ? location.hash.substr(1) : location.pathname
-        }
-    }
+		} else if (node.tag) {
+			var element = parent.childNodes[index]
 
-    for (var name in merge(reducers, effects)) {
-        (function (name) {
-            msg[name] = function (data) {
-                hooks.onAction(name, data)
+			updateElementData(element, node.data, oldNode.data)
 
-                var effect = effects[name]
-                if (effect) {
-                    return effect(model, msg, data, hooks.onError)
-                }
+			var len = node.tree.length, oldLen = oldNode.tree.length
 
-                var update = reducers[name], _model = model
-                render(model = merge(model, update(model, data)), view, node)
+			for (var i = 0; i < len || i < oldLen; i++) {
+				patch(element, node.tree[i], oldNode.tree[i], i)
+			}
+		}
+	}
 
-                hooks.onUpdate(_model, model, data)
-            }
-        } (name))
-    }
+	const createElementFrom = node => {
+		var element
 
-    document.addEventListener("DOMContentLoaded", function () {
-        for (var sub in subs) {
-            subs[sub](model, msg, hooks.onError)
-        }
-    })
+		if (isPrimitive(typeof node)) {
+			element = document.createTextNode(node)
 
-    render(model, view)
+		} else {
+			element = node.data && node.data.ns
+				? document.createElementNS(node.data.ns, node.tag)
+				: document.createElement(node.tag)
 
-    function render(model, view, lastNode) {
-        patch(root, node = view(model, msg), lastNode, 0)
-    }
+			for (var name in node.data) {
+				if (name === "oncreate") {
+					defer(node.data[name], element)
+				} else {
+					setElementData(element, name, node.data[name])
+				}
+			}
 
-    function route(routes, path) {
-        for (var route in routes) {
-            var re = regexify(route), params = {}, match
+			for (var i = 0; i < node.tree.length; i++) {
+				element.appendChild(createElementFrom(node.tree[i]))
+			}
+		}
 
-            path.replace(new RegExp(re.re, "g"), function () {
-                for (var i = 1; i < arguments.length - 2; i++) {
-                    params[re.keys.shift()] = arguments[i]
-                }
+		return element
+	}
 
-                match = function (model, msg) {
-                    return routes[route](model, msg, params)
-                }
-            })
+	const setElementData = (element, name, value, oldValue) => {
+		if (name === "style") {
+			for (var i in value) {
+				element.style[i] = value[i]
+			}
 
-            if (match) {
-                return match
-            }
-        }
+		} else if (name.substr(0, 2) === "on") {
+			var event = name.substr(2)
+			element.removeEventListener(event, oldValue)
+			element.addEventListener(event, value)
 
-        return routes["/"]
-    }
+		} else {
+			if (value === "false" || value === false) {
+				element.removeAttribute(name)
+				element[name] = false
+			} else {
+				element.setAttribute(name, value)
+				element[name] = value
+			}
+		}
+	}
 
-    function regexify(path) {
-        var keys = [], re = "^" + path
-            .replace(/\//g, "\\/")
-            .replace(/:([A-Za-z0-9_]+)/g, function (_, key) {
-                keys.push(key)
-                return "([A-Za-z0-9_]+)"
-            }) + "/?$"
+	const removeElementData = (element, name, value) => {
+		element.removeAttribute(name === "className" ? "class" : name)
 
-        return { re: re, keys: keys }
-    }
+		if (typeof value === "boolean" || value === "true" || value === "false") {
+			element[name] = false
+		}
+	}
 
-    function isPrimitive(type) {
-        return type === "string" || type === "number" || type === "boolean"
-    }
+	const updateElementData = (element, data, oldData) => {
+		for (var name in merge(oldData, data)) {
+			var value = data[name], oldValue = oldData[name]
 
-    function defer(fn, data) {
-        setTimeout(function () {
-            fn(data)
-        }, 0)
-    }
+			if (value === undefined) {
+				removeElementData(element, name, oldValue)
 
-    function merge(a, b) {
-        var obj = {}, key
+			} else if (value !== oldValue) {
+				name === "onupdate"
+					? defer(value, element)
+					: setElementData(element, name, value, oldValue)
+			}
+		}
+	}
 
-        if (isPrimitive(typeof b) || Array.isArray(b)){
-            return b
-        }
+	const regexify = path => {
+		var keys = [], re = "^" + path
+			.replace(/\//g, "\\/")
+			.replace(/:([A-Za-z0-9_]+)/g, (_, key) => {
+				keys.push(key)
+				return "([A-Za-z0-9_]+)"
+			}) + "/?$"
 
-        for (key in a) {
-            obj[key] = a[key]
-        }
-        for (key in b) {
-            obj[key] = b[key]
-        }
+		return { re: re, keys: keys }
+	}
 
-        return obj
-    }
+	const route = (routes, path) => {
+		for (var route in routes) {
+			var re = regexify(route), params = {}, match
 
-    function shouldUpdate(a, b) {
-        return a.tag !== b.tag
-            || typeof a !== typeof b
-            || isPrimitive(typeof a) && a !== b
-    }
+			path.replace(new RegExp(re.re, "g"), function() {
+				for (var i = 1; i < arguments.length - 2; i++) {
+					params[re.keys.shift()] = arguments[i]
+				}
+				match = (model, msg) => routes[route](model, msg, params)
+			})
 
-    function createElementFrom(node) {
-        var element
-        if (isPrimitive(typeof node)) {
-            element = document.createTextNode(node)
+			if (match) {
+				return match
+			}
+		}
 
-        } else {
-            element = node.data && node.data.ns
-                ? document.createElementNS(node.data.ns, node.tag)
-                : document.createElement(node.tag)
+		return routes["/"]
+	}
 
-            for (var name in node.data) {
-                if (name === "oncreate") {
-                    defer(node.data[name], element)
-                } else {
-                    setElementData(element, name, node.data[name])
-                }
-            }
+	var msg = {}
 
-            for (var i = 0; i < node.tree.length; i++) {
-                element.appendChild(createElementFrom(node.tree[i]))
-            }
-        }
+	var model = options.model
+	var reducers = options.update || {}
+	var effects = options.effects || {}
+	var subs = options.subs || {}
 
-        return element
-    }
+	var hooks = merge({
+		onAction: Function.prototype,
+		onUpdate: Function.prototype,
+		onError: err => {
+			throw err
+		}
+	}, options.hooks)
 
-    function removeElementData(element, name, value) {
-        element.removeAttribute(name === "className" ? "class" : name)
+	var node
+	var root = options.root || document.body.appendChild(document.createElement("div"))
+	var view = options.view || (_ => root)
+	var routes = typeof view === "function" ? undefined : view
 
-        if (typeof value === "boolean" || value === "true" || value === "false") {
-            element[name] = false
-        }
-    }
+	if (routes) {
+		view = route(routes, location.pathname)
 
-    function setElementData(element, name, value, oldValue) {
-        if (name === "style") {
-            for (var i in value) {
-                element.style[i] = value[i]
-            }
+		msg.setLocation = data => {
+			render(model, view = route(routes, data), node)
+			history.pushState({}, "", data)
+		}
 
-        } else if (name.substr(0, 2) === "on") {
-            var event = name.substr(2)
-            element.removeEventListener(event, oldValue)
-            element.addEventListener(event, value)
+		window.addEventListener("popstate", _ => {
+			render(model, view = route(routes, location.pathname), node)
+		})
 
-        } else {
-            if (value === "false" || value === false) {
-                element.removeAttribute(name)
-                element[name] = false
-            } else {
-                element.setAttribute(name, value)
-                element[name] = value
-            }
-        }
-    }
+		window.addEventListener("click", e => {
+			if (e.metaKey || e.shiftKey || e.ctrlKey || e.altKey) {
+				return
+			}
 
-    function updateElementData(element, data, oldData) {
-        for (var name in merge(oldData, data)) {
-            var value = data[name], oldValue = oldData[name]
+			var target = e.target
 
-            if (value === undefined) {
-                removeElementData(element, name, oldValue)
+			while (target && target.localName !== "a") {
+				target = target.parentNode
+			}
 
-            } else if (value !== oldValue) {
-                name === "onupdate"
-                    ? defer(value, element)
-                    : setElementData(element, name, value, oldValue)
-            }
-        }
-    }
+			if (target && target.host === location.host
+				&& !target.hasAttribute("data-no-routing")) {
 
-    function patch(parent, node, oldNode, index) {
-        if (oldNode === undefined) {
-            parent.appendChild(createElementFrom(node))
+				var element = target.hash === "" ? element : document.querySelector(target.hash)
 
-        } else if (node === undefined) {
-            while (index > 0 && !parent.childNodes[index]) {
-                index--
-            }
+				if (element) {
+					element.scrollIntoView(true)
+				} else {
+					msg.setLocation(target.pathname)
+					e.preventDefault()
+				}
+			}
+		})
+	}
 
-            if (index >= 0) {
-                var element = parent.childNodes[index]
+	for (let name in merge(reducers, effects)) {
+		msg[name] = data => {
+			hooks.onAction(name, data)
 
-                if (oldNode && oldNode.data) {
-                    var hook = oldNode.data.onremove
-                    if (hook) {
-                        defer(hook, element)
-                    }
-                }
+			var effect = effects[name]
+			if (effect) {
+				return effect(model, msg, data, hooks.onError)
+			}
 
-                parent.removeChild(element)
-            }
+			var update = reducers[name], _model = model
+			render(model = merge(model, update(model, data)), view, node)
 
-        } else if (shouldUpdate(node, oldNode)) {
-            parent.replaceChild(createElementFrom(node), parent.childNodes[index])
+			hooks.onUpdate(_model, model, data)
+		}
+	}
 
-        } else if (node.tag) {
-            var element = parent.childNodes[index]
+	document.addEventListener("DOMContentLoaded", _ => {
+		for (var sub in subs) {
+			subs[sub](model, msg, hooks.onError)
+		}
+	})
 
-            updateElementData(element, node.data, oldNode.data)
-
-            var len = node.tree.length, oldLen = oldNode.tree.length
-
-            for (var i = 0; i < len || i < oldLen; i++) {
-                patch(element, node.tree[i], oldNode.tree[i], i)
-            }
-        }
-    }
+	render(model, view)
 }
 
 
