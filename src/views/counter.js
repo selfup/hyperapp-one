@@ -1,26 +1,23 @@
-import { html } from 'hyperapp';
+import { h } from 'hyperapp';
 
-const view = (model, msg) => (html`
-  <div class="counter">
-    <h1>Welcome to the hyperapp-one boilerplate!</h1>
-    <hr class="line-break" />
+const view = (model, msg) => (
+  <div className="counter">
+    <h1>hyperapp-one</h1>
+    <p><em>With JSX and Webpack</em></p>
+    <hr />
     <section>
       <button
-        class="add"
-        onclick=${msg.add}
-      >
-        +
-      </button>
-      <h1>${model.num}</h1>
+      className="sub"
+        onclick={msg.sub}
+        disabled={model.num <= 0}
+      >-</button>
+      <h1 className='count'>{model.num}</h1>
       <button
-        class="sub"
-        onclick=${msg.sub}
-        disabled=${model.num <= 0}
-      >
-        -
-      </button>
+        className="add"
+        onclick={msg.add}
+      >+</button>
     </section>
   </div>
-`);
+);
 
 export default view;
