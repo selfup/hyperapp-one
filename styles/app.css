@@ -28,6 +28,7 @@ button {
 h1 {
   font-size: calc(20px + 6vmin);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 p {
