@@ -63,4 +63,4 @@ git push origin gh-pages
 
 ### Example GIF:
 
-![basic gif of app](https://cloud.githubusercontent.com/assets/9837366/22784577/cdcf4c84-ee8d-11e6-98ca-89fe3b387cf1.gif)
+![screen shot](https://cloud.githubusercontent.com/assets/9837366/23686198/5477d080-0365-11e7-85af-f8357401e496.png)

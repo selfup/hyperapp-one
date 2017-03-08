@@ -7,14 +7,14 @@ const view = (model, msg) => (
     <hr />
     <section>
       <button
-      className="sub"
-        onclick={msg.sub}
+        className="sub"
+        onClick={msg.sub}
         disabled={model.num <= 0}
       >-</button>
       <h1 className='count'>{model.num}</h1>
       <button
         className="add"
-        onclick={msg.add}
+        onClick={msg.add}
       >+</button>
     </section>
   </div>
