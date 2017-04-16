@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack",
+    "build": "NODE_ENV=production && webpack",
     "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
   "dependencies": {
-    "hyperapp": "0.7.1"
+    "hyperapp": "0.8.1"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",

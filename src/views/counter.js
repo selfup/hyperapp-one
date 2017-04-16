@@ -1,23 +1,25 @@
 import { h } from 'hyperapp';
 
-const view = (model, msg) => (
-  <div className="counter">
+export default (state, msg) => (
+  <div class="counter">
     <h1>hyperapp-one</h1>
     <p><em>With JSX and Webpack</em></p>
     <hr />
     <section>
       <button
-        className="sub"
+        class="sub"
         onClick={msg.sub}
-        disabled={model.num <= 0}
-      >-</button>
-      <h1 className='count'>{model.num}</h1>
+        disabled={state.num < 1}
+      >
+        -
+      </button>
+      <h1 class='count'>{state.num}</h1>
       <button
-        className="add"
+        class="add"
         onClick={msg.add}
-      >+</button>
+      >
+        +
+      </button>
     </section>
   </div>
 );
-
-export default view;
