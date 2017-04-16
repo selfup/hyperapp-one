@@ -7,10 +7,11 @@ const plugins = [
     filename: './bundle.css',
     allChunks: true,
   }),
-  new BabiliPlugin(),
 ];
 
-module.exports = function webpackStuff() {
+module.exports = function webpackStuff(env) {
+  if (env === 'production') plugins.push(new BabiliPlugin());
+
   return {
     entry: [
       './src/index.js',
