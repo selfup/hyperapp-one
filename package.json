@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production && webpack",
+    "build": "webpack --env production",
     "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'"
   },
   "author": "Regis Boudinot (selfup)",

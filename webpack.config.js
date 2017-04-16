@@ -9,8 +9,8 @@ const plugins = [
   }),
 ];
 
-module.exports = function webpackStuff() {
-  if (process.env.NODE_ENV === 'production') plugins.push(new BabiliPlugin());
+module.exports = function webpackStuff(env) {
+  if (env === 'production') plugins.push(new BabiliPlugin());
 
   return {
     entry: [
