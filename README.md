@@ -21,6 +21,16 @@ This will reload as you save new code :smile:
 
 **Make sure you are in the boilerplate root:**
 
+You can either:
+
+```bash
+npm run wipe
+```
+
+And then add your remote: `git remote add origin <ssh_or_https_url>`
+
+**OR** 
+
 ```bash
 rm -rf .git
 git init
@@ -28,7 +38,9 @@ git add .
 git commit -m "initial commit"
 ```
 
-Then work as normal and don't forget to add the new remote before pushing up!
+And then add your remote: `git remote add origin <ssh_or_https_url>`
+
+Then work as normal :smile:
 
 ***
 

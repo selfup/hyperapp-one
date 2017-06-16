@@ -6,12 +6,13 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --env production",
+    "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
     "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
   "dependencies": {
-    "hyperapp": "0.8.1"
+    "hyperapp": "0.9.2"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",

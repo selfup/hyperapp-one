@@ -2193,9 +2193,9 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
-hyperapp@0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/hyperapp/-/hyperapp-0.8.1.tgz#21e13246deb148d213a52cbbfdbebcb2038fb482"
+hyperapp@0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/hyperapp/-/hyperapp-0.9.2.tgz#9392b07318baa188a97a723f674f4dea874b9c53"
 
 icss-replace-symbols@^1.0.2:
   version "1.0.2"
