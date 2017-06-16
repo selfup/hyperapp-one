@@ -8,7 +8,7 @@ export default (state, msg) => (
     <section>
       <button
         class="sub"
-        onClick={msg.sub}
+        onclick={msg.sub}
         disabled={state.num < 1}
       >
         -
@@ -16,7 +16,7 @@ export default (state, msg) => (
       <h1 class='count'>{state.num}</h1>
       <button
         class="add"
-        onClick={msg.add}
+        onclick={msg.add}
       >
         +
       </button>
