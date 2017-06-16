@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "build": "webpack --env production",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
-    "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && npm run wipe && git log && echo 'SUCCESS!'"
+    "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
