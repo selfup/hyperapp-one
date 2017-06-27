@@ -75,4 +75,4 @@ git push origin gh-pages
 
 ### Website:
 
-[Over Here!](http://selfup.me/hyperapp-one)
+[Over Here!](http://selfup.github.io/hyperapp-one)
