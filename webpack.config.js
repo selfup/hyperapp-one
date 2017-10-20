@@ -1,6 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BabelMinify = require('babel-preset-minify');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const webpack = require('webpack');
 
 const plugins = [
@@ -12,7 +12,7 @@ const plugins = [
 ];
 
 module.exports = function webpackStuff(env) {
-  if (env === 'production') plugins.push(new BabelMinify());
+  if (env === 'production') plugins.push(new MinifyPlugin());
 
   return {
     entry: [
