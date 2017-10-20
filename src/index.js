@@ -10,7 +10,7 @@ const dispatch = app({
 });
 
 /**
- * hyperapp exposes it's actions
+ * hyperapp exposes its actions
  * i like to see it as a dispatch
  * this is just an example of calling the actions from outside of hyperapp!!
  * think of it as a hub to talk to other apps/frameworks/vanillaJS
