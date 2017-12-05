@@ -1,4 +1,4 @@
 export default {
-  add: ({ num }) => ({ num: num + 1 }),
-  sub: ({ num }) => ({ num: num - 1 }),
+  add: (/* event (e) */) => ({ num }) => ({ num: num + 1 }),
+  sub: (/* event (e) */) => ({ num }) => ({ num: num - 1 }),
 };
