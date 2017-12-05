@@ -1,8 +1,8 @@
 import { h } from 'hyperapp';
 
 /**
- * first function is 'state' (an object - {})
- * second function is 'actions' (an object - {})
+ * first function takes in 'state' (an object - {})
+ * second function takes in 'actions' (an object - {})
  * here we destructure what is needed
  * 'num' from 'state' and 'add'/'sub' from 'actions'
  */
