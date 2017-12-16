@@ -3,11 +3,18 @@ import actions from './actions';
 import state from './state';
 import view from './components/Counter';
 
-const dispatch = app({
+const model = {
   state,
   actions,
+};
+
+const {
+  actions: dispatch,
+} = app(
+  model,
   view,
-});
+  document.body,
+);
 
 /**
  * hyperapp exposes its actions
