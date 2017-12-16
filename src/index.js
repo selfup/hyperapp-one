@@ -8,15 +8,11 @@ const model = {
   actions,
 };
 
-const appArgs = {
-  model,
-  view,
-};
-
 const {
   actions: dispatch,
 } = app(
-  appArgs,
+  model,
+  view,
   document.body,
 );
 
