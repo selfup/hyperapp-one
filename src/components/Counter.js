@@ -22,7 +22,7 @@ export default ({
       >
         -
       </button>
-      <h1 class='count'>{num}</h1>
+      <h1 class="count">{num}</h1>
       <button
         class="add"
         onclick={add}
