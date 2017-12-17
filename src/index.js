@@ -3,15 +3,12 @@ import actions from './actions';
 import state from './state';
 import view from './components/Counter';
 
-const model = {
+const {
+  add,
+  sub,
+} = app(
   state,
   actions,
-};
-
-const {
-  actions: dispatch,
-} = app(
-  model,
   view,
   document.body,
 );
@@ -23,5 +20,5 @@ const {
  * think of it as a hub to talk to other apps/frameworks/vanillaJS
  * here is an example on codepen: https://codepen.io/selfup/pen/jLMRjO
  */
-setTimeout(dispatch.add, 1000);
-setTimeout(dispatch.sub, 2000);
+setTimeout(add, 1000);
+setTimeout(sub, 2000);
