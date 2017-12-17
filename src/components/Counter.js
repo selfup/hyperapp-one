@@ -6,10 +6,7 @@ import { h } from 'hyperapp';
  * here we destructure what is needed
  * 'num' from 'state' and 'add'/'sub' from 'actions'
  */
-export default ({
-  state: { num },
-  actions: { add, sub },
-}) =>
+export default ({ num }, { add, sub }) =>
   <div class="counter">
     <h1>hyperapp-one</h1>
     <p><em>With JSX and Webpack</em></p>
