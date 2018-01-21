@@ -13,12 +13,14 @@ const {
   document.body,
 );
 
+
 /**
- * hyperapp exposes its actions
- * i like to see it as a dispatch
- * this is just an example of calling the actions from outside of hyperapp!!
- * think of it as a hub to talk to other apps/frameworks/vanillaJS
- * here is an example on codepen: https://codepen.io/selfup/pen/jLMRjO
+ * Hyperapp wires your actions so the view is re-rendered every time the state
+ * changes as a result of calling any action. This object is useful because it
+ * allows you to talk to your app from another app, framework, vanilla JS, etc.
+ *
+ * Here is an example on CodePen: https://codepen.io/selfup/pen/jLMRjO
  */
+
 setTimeout(add, 1000);
 setTimeout(sub, 2000);
