@@ -23,7 +23,7 @@ The browser will reload as you save new code! 🚀💯
 
 Now go code something awesome!
 
-### Testing
+## Testing
 
 `npm test`
 
