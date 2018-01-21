@@ -23,6 +23,12 @@ The browser will reload as you save new code! 🚀💯
 
 Now go code something awesome!
 
+### Testing
+
+`npm test`
+
+All tests are in the root `test` directory :tada:
+
 ### Wiping the Commit History
 
 Make sure you are in the boilerplate root and run:
