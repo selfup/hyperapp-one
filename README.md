@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one)
 
-Webpack boilerplate for quickstarting a web app with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
+Webpack boilerplate for quickstarting a web app with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
 
 [Try it out here](http://selfup.github.io/hyperapp-one)!
 
@@ -79,3 +79,13 @@ git push origin gh-pages
 
 * (No custom domain) -> `<your_username>.github.io/<your_repo_name>`
 * (Custom domain) -> `<custom_domain>/<your_repo_name>`
+
+### Stylistic Differences
+
+As you may have noticed I don't use `prettier` or the `standard` style. I prefer ESLint and AirBnb.
+
+**Feel free to change this!** _You can easily remove `.eslintrc.js` and code without a linter, as well as remove all `eslint` packages in the `package.json`!_
+
+I just like how strict AirBnb is, and how it forces you to learn certain ways of doing things manually. It also enforces rules that make it so git diffs are less of a pain to go through. VSCode and Atom have options to have ESLint auto correct (as much as it can) the formatting via the ESLint plugin.
+
+I also use JSX instead of pure `h` because to me it is easier to go through Code Reviews with, and is _stylistically_ more pleasing to me. It also helps with UX teams as they know HTML and JSX is closer to HTML than pure `h` calls.
