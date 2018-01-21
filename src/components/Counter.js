@@ -1,4 +1,5 @@
 import { h } from 'hyperapp';
+import Description from './Description';
 
 /**
  * first object in the store is 'state' (an object - {})
@@ -8,9 +9,7 @@ import { h } from 'hyperapp';
  */
 export default ({ num }, { add, sub }) =>
   <div class="counter">
-    <h1>hyperapp-one</h1>
-    <p><em>With JSX and Webpack</em></p>
-    <hr />
+    <Description />
     <section>
       <button
         class="sub"
