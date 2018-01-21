@@ -15,6 +15,12 @@ npm install
 npm start
 ```
 
+## Testing
+
+`npm test`
+
+All tests are in the root `test` directory :tada:
+
 ## Development
 
 Access [localhost:8080/webpack-dev-server](http://localhost:8080/webpack-dev-server/index.html).
@@ -22,12 +28,6 @@ Access [localhost:8080/webpack-dev-server](http://localhost:8080/webpack-dev-ser
 The browser will reload as you save new code! 🚀💯
 
 Now go code something awesome!
-
-## Testing
-
-`npm test`
-
-All tests are in the root `test` directory :tada:
 
 ### Wiping the Commit History
 
