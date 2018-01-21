@@ -3,6 +3,7 @@ module.exports = {
   'plugins': [
     'import',
     'react',
+    'jest',
   ],
   'rules': {
     'linebreak-style': 'off',
@@ -16,5 +17,6 @@ module.exports = {
   },
   'env': {
     'browser': true,
+    'jest': true,
   }
 };
