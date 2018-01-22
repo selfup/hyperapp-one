@@ -1,12 +1,32 @@
-# Hyperapp One Boilerplate
+# Hyperapp One
 
-[![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one)
+[![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
-Webpack boilerplate for quickstarting a web app with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
+Hyperapp One is a Webpack boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
 
-[Try it out here](http://selfup.github.io/hyperapp-one)!
+<div align=center>
+  <a href=http://selfup.github.io/hyperapp-one>
+    <img width=500 src=https://user-images.githubusercontent.com/56996/35205568-92ab325a-ff79-11e7-8978-81f0866c53af.gif />
+  </a>
+</div>
 
-## Install
+<h2>Table of Contents</h2>
+
+<!-- TOC -->
+
+* [Installing](#installing)
+* [Testing](#testing)
+* [Development](#development)
+  * [Wiping the Commit History](#wiping-the-commit-history)
+  * [Deploying to GitHub Pages](#deploying-to-github-pages)
+    * [First Time](#first-time)
+    * [Every Time After](#every-time-after)
+* [Stylistic Differences](#stylistic-differences)
+* [License](#license)
+
+<!-- /TOC -->
+
+## Installing
 
 ```bash
 git clone https://github.com/selfup/hyperapp-one
@@ -17,15 +37,17 @@ npm start
 
 ## Testing
 
-`npm test`
+```bash
+npm test
+```
 
-All tests are in the root `test` directory :tada:
+All tests are in the root `test` directory. :tada:
 
 ## Development
 
 Access [localhost:8080/webpack-dev-server](http://localhost:8080/webpack-dev-server/index.html).
 
-The browser will reload as you save new code! 🚀💯
+The browser will reload as you save new code. 🚀
 
 Now go code something awesome!
 
@@ -62,7 +84,7 @@ git remote add origin <ssh_or_https_url>
 
 ### Deploying to GitHub Pages
 
-#### The first time
+#### First Time
 
 ```bash
 git checkout -b gh-pages
@@ -71,7 +93,7 @@ git add . && git commit -m "built"
 git push origin gh-pages
 ```
 
-#### Every time after that
+#### Every Time After
 
 ```bash
 git checkout gh-pages
@@ -81,17 +103,21 @@ git add . && git commit -m "built"
 git push origin gh-pages
 ```
 
-**Now go visit**:
+**Now visit**:
 
-* (No custom domain) -> `<your_username>.github.io/<your_repo_name>`
-* (Custom domain) -> `<custom_domain>/<your_repo_name>`
+* No custom domain: `yourUserName.github.io/yourRepoName`
+* With a custom domain: `yourCustomDomain/yourRepoName`
 
-### Stylistic Differences
+## Stylistic Differences
 
-As you may have noticed I don't use `prettier` or the `standard` style. I prefer ESLint and AirBnb.
+As you may have noticed I don't use [prettier](https://github.com/prettier/prettier) or [Standard](https://github.com/standard/standard). I prefer [ESLint](https://github.com/eslint/eslint) and [AirBnb](https://github.com/airbnb/javascript).
 
-**Feel free to change this!** _You can easily remove `.eslintrc.js` and code without a linter, as well as remove all `eslint` packages in the `package.json`!_
+**Feel free to change this.** You can easily remove `.eslintrc.js` and code without a linter, as well as remove all `eslint` packages in the `package.json`!
 
 I just like how strict AirBnb is, and how it forces you to learn certain ways of doing things manually. It also enforces rules that make it so git diffs are less of a pain to go through. VSCode and Atom have options to have ESLint auto correct (as much as it can) the formatting via the ESLint plugin.
 
-I also use JSX instead of pure `h` because to me it is easier to go through Code Reviews with, and is _stylistically_ more pleasing to me. It also helps with UX teams as they know HTML and JSX is closer to HTML than pure `h` calls.
+I also use JSX instead of the built-in `h` function, because to me it is easier to go through Code Reviews with, and is _stylistically_ more pleasing to me. It also helps with UX teams as they know HTML, and JSX is closer to HTML than pure `h` calls. See [@hyperapp/html](https://github.com/hyperapp/html) for another alternative to JSX.
+
+## License
+
+Hyperapp One is MIT licensed. See [LICENSE](LICENSE).
