@@ -5,24 +5,29 @@ test('Description component renders', () => {
   expect(Description()).toEqual({
     children: [{
       children: ['hyperapp-one'],
-      name: 'h1',
-      props: {},
+      nodeName: 'h1',
+      attributes: {},
+      key: null,
     },
     {
       children: [{
         children: ['With JSX and Webpack'],
-        name: 'em',
-        props: {},
+        nodeName: 'em',
+        attributes: {},
+        key: null,
       }],
-      name: 'p',
-      props: {},
+      nodeName: 'p',
+      attributes: {},
+      key: null,
     },
     {
       children: [],
-      name: 'hr',
-      props: {},
+      nodeName: 'hr',
+      attributes: {},
+      key: null,
     }],
-    name: 'div',
-    props: {},
+    nodeName: 'div',
+    attributes: {},
+    key: null,
   });
 });
