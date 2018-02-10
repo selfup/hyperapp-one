@@ -10,7 +10,7 @@ test('Actions add', () => {
 
 test('Actions sub', () => {
   const addResult = actions.sub()({ num: 1 });
-  
+
   expect(addResult).toEqual({
     num: 0,
   });
