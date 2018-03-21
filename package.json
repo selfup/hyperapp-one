@@ -1,7 +1,7 @@
 {
   "name": "hyperapp-one",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Minimal web app",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -21,7 +21,6 @@
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-transform-react-jsx": "^6.22.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.28.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.0.0",

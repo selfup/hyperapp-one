@@ -11,7 +11,7 @@ const plugins = [
   new webpack.optimize.ModuleConcatenationPlugin(),
 ];
 
-module.exports = function webpackStuff(env) {
+module.exports = (env) => {
   if (env === 'production') plugins.push(new MinifyPlugin());
 
   return {
@@ -21,7 +21,7 @@ module.exports = function webpackStuff(env) {
     ],
     output: {
       filename: 'bundle.js',
-      path: path.resolve(__dirname, './'),
+      path: path.resolve(__dirname, './dist'),
     },
     module: {
       rules: [{
@@ -29,7 +29,7 @@ module.exports = function webpackStuff(env) {
         loader: 'babel-loader',
         query: {
           presets: [
-            'es2015',
+            'env',
           ],
           plugins: [],
         },
@@ -44,5 +44,10 @@ module.exports = function webpackStuff(env) {
       }],
     },
     plugins,
+    devServer: {
+      publicPath: '/',
+      contentBase: './dist',
+      open: true,
+    },
   };
 };
