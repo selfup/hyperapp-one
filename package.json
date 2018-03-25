@@ -1,18 +1,19 @@
 {
   "name": "hyperapp-one",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Minimal web app",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --env production",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
+    "deploy": "npm run build && ./scripts/gh-pages.sh",
     "test": "jest --coverage --no-cache"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
   "dependencies": {
-    "hyperapp": "^1.1.2"
+    "hyperapp": "^1.2.5"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
@@ -21,7 +22,6 @@
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-transform-react-jsx": "^6.22.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.28.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.0.0",
