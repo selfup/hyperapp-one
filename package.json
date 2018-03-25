@@ -7,12 +7,13 @@
     "start": "webpack-dev-server",
     "build": "webpack --env production",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
+    "deploy": "npm run build && ./scripts/gh-pages.sh",
     "test": "jest --coverage --no-cache"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
   "dependencies": {
-    "hyperapp": "^1.1.2"
+    "hyperapp": "^1.2.5"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
