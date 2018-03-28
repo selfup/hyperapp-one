@@ -2,5 +2,14 @@
   "plugins": [
     ["transform-react-jsx", { "pragma": "h" }]
   ],
-  "presets": ["env"],
+  "presets": [
+    ["env", { modules: false }]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env"]
+      ],
+    }
+  }
 }

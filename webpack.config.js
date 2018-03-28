@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 const plugins = [
@@ -12,7 +13,10 @@ const plugins = [
 ];
 
 module.exports = (env) => {
-  if (env === 'production') plugins.push(new MinifyPlugin());
+  if (env === 'production') {
+    plugins.push(new UglifyJsPlugin());
+    plugins.push(new MinifyPlugin());
+  }
 
   return {
     entry: [
@@ -27,12 +31,6 @@ module.exports = (env) => {
       rules: [{
         test: /\.js$/,
         loader: 'babel-loader',
-        query: {
-          presets: [
-            'env',
-          ],
-          plugins: [],
-        },
         include: [
           path.resolve(__dirname, './'),
         ],
