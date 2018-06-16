@@ -1,8 +1,21 @@
-#!/bin/sh
-set -eu -o pipefail
-set -x
+GH_PAGES=$(git branch | grep gh-pages)
 
-git push origin :gh-pages \
-  && git subtree push --prefix build origin gh-pages \
-  && git branch -D gh-pages \
-  && rm -rf build
+function commitAndPushToGhPages() {
+  git checkout gh-pages \
+    && git merge master \
+    && git add . \
+    && git commit -m "built" \
+    && git push origin gh-pages \
+    && git checkout master
+}
+
+echo 'BUILDING AND DEPLOYING'
+
+if [[ $GH_PAGES != '' ]]
+then
+  commitAndPushToGhPages
+else
+  git checkout -b gh-pages && commitAndPushToGhPages
+fi
+
+echo 'DEPLOYED!'

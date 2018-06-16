@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "build": "rm -rf build && webpack --config webpack.config.prod.js",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
-    "deploy": "npm run build && ./scripts/gh_pages.sh",
+    "deploy": "npm run build &&./scripts/gh_pages.sh",
     "test": "jest --coverage --no-cache"
   },
   "author": "Regis Boudinot (selfup)",

@@ -5,11 +5,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-const OUTPUT_DIR = process.env.OUTPUT_DIR || './build';
+const OUTPUT_DIR = './build';
 
 const plugins = [
   new HtmlWebpackPlugin({
     title: 'Hyperapp One',
+    template: './src/index.html',
+    filename: path.join(__dirname, './index.html'),
   }),
   new ExtractTextPlugin({
     filename: '[name].[hash].css',

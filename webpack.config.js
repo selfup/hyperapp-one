@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const plugins = [
   new HtmlWebpackPlugin({
     title: 'Hyperapp One',
+    template: './src/index.html',
   }),
   new ExtractTextPlugin({
     filename: './[name].[hash].css',
