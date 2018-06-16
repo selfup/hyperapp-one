@@ -3,13 +3,13 @@
     ["transform-react-jsx", { "pragma": "h" }]
   ],
   "presets": [
-    ["env", { modules: false }]
+    ["env", { "modules": false }]
   ],
   "env": {
     "test": {
       "presets": [
         ["env"]
-      ],
+      ]
     }
   }
 }

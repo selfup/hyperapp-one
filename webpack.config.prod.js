@@ -1,17 +1,24 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+
+const OUTPUT_DIR = './build';
 
 const plugins = [
   new HtmlWebpackPlugin({
     title: 'Hyperapp One',
     template: './src/index.html',
+    filename: path.join(__dirname, './index.html'),
   }),
   new ExtractTextPlugin({
-    filename: './[name].[hash].css',
+    filename: '[name].[hash].css',
     allChunks: true,
   }),
+  new UglifyJsPlugin(),
+  new MinifyPlugin(),
   new webpack.optimize.ModuleConcatenationPlugin(),
 ];
 
@@ -20,10 +27,9 @@ module.exports = () => ({
     './src/index.js',
     './styles/app.css',
   ],
-  devtool: 'source-map',
   output: {
     filename: '[name].[hash].js',
-    path: path.resolve(__dirname, './'),
+    path: path.resolve(__dirname, OUTPUT_DIR),
   },
   module: {
     rules: [
@@ -43,8 +49,4 @@ module.exports = () => ({
     ],
   },
   plugins,
-  devServer: {
-    publicPath: '/',
-    open: true,
-  },
 });
