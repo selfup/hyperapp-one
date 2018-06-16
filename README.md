@@ -85,6 +85,8 @@ git remote add origin <ssh_or_https_url>
 
 ### Deploying to GitHub Pages
 
+This will be interactive as it merges `master` into the `gh-pages` branch :pray:
+
 ```bash
 npm run deploy
 ```
