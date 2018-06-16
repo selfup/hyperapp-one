@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --env production",
+    "build": "rm -rf build && webpack --config webpack.config.prod.js",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
-    "deploy": "npm run build && ./scripts/gh-pages.sh",
+    "deploy": "npm run build && ./scripts/gh_pages.sh",
     "test": "jest --coverage --no-cache"
   },
   "author": "Regis Boudinot (selfup)",
@@ -29,11 +29,12 @@
     "eslint-plugin-jest": "^21.7.0",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "imports": "^1.0.0",
     "jest": "^22.1.4",
     "node-libs-browser": "^2.0.0",
     "uglifyjs-webpack-plugin": "^1.2.4",
-    "webpack": "^3.4.0",
+    "webpack": "^3.11.0",
     "webpack-dev-server": "^2.4.2"
   }
 }

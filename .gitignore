@@ -1,4 +1,6 @@
 node_modules
 .vscode
-npm-debug.log
+*.log
 coverage
+build
+*.DS_Store
