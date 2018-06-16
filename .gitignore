@@ -2,5 +2,4 @@ node_modules
 .vscode
 *.log
 coverage
-build
 *.DS_Store
