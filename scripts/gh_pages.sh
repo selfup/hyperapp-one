@@ -5,7 +5,7 @@ function buildCommitAndPushToGhPages() {
     && npm run build \
     && git add . \
     && git commit -m "built" \
-    && git push origin gh-pages \
+    && git push origin gh-pages -f \
     && git checkout master
 }
 
