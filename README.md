@@ -4,6 +4,8 @@
 
 Hyperapp One is a Webpack boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
 
+Redux Dev Tools support is included as well :smile:
+
 <div align=center>
   <a href=http://selfup.github.io/hyperapp-one>
     <img width=500 src=https://user-images.githubusercontent.com/56996/35205568-92ab325a-ff79-11e7-8978-81f0866c53af.gif />
