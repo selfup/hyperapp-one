@@ -93,6 +93,10 @@ This will be interactive as it merges `master` into the `gh-pages` branch :pray:
 npm run deploy
 ```
 
+Sometimes it will say there is nothing to commit even though you have more commits.
+
+Just do a `git push` or a `git push -f` and then check back out to master :pray:
+
 **Now visit**:
 
 * No custom domain: `yourUserName.github.io/yourRepoName`
