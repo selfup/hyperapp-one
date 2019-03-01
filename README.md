@@ -90,7 +90,7 @@ git remote add origin <ssh_or_https_url>
 This will be interactive as it merges `master` into the `gh-pages` branch :pray:
 
 ```bash
-npm run deploy
+./scripts/gh_pages.sh
 ```
 
 Sometimes it will say there is nothing to commit even though you have more commits.
