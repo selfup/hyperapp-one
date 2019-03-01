@@ -1,8 +1,8 @@
 # Hyperapp One
 
-[![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
+[![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com 'Join us')
 
-Hyperapp One is a Webpack boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
+Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
 
 Redux Dev Tools support is included as well :smile:
 
@@ -16,16 +16,16 @@ Redux Dev Tools support is included as well :smile:
 
 <!-- TOC -->
 
-* [Installing](#installing)
-* [Testing](#testing)
-* [Development](#development)
-  * [Wiping the Commit History](#wiping-the-commit-history)
-  * [Deploying to GitHub Pages](#deploying-to-github-pages)
-    * [First Time](#first-time)
-    * [Every Time After](#every-time-after)
-* [Stylistic Differences](#stylistic-differences)
-* [Less Strict Alternative](#less-strict-alternative)
-* [License](#license)
+- [Installing](#installing)
+- [Testing](#testing)
+- [Development](#development)
+  - [Wiping the Commit History](#wiping-the-commit-history)
+  - [Deploying to GitHub Pages](#deploying-to-github-pages)
+    - [First Time](#first-time)
+    - [Every Time After](#every-time-after)
+- [Stylistic Differences](#stylistic-differences)
+- [Less Strict Alternative](#less-strict-alternative)
+- [License](#license)
 
 <!-- /TOC -->
 
@@ -99,8 +99,8 @@ Just do a `git push` or a `git push -f` and then check back out to master :pray:
 
 **Now visit**:
 
-* No custom domain: `yourUserName.github.io/yourRepoName`
-* With a custom domain: `yourCustomDomain/yourRepoName`
+- No custom domain: `yourUserName.github.io/yourRepoName`
+- With a custom domain: `yourCustomDomain/yourRepoName`
 
 ## Stylistic Differences
 

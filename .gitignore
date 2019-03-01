@@ -3,3 +3,5 @@ node_modules
 *.log
 coverage
 *.DS_Store
+.cache/
+dist/

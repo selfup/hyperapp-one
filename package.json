@@ -4,10 +4,10 @@
   "description": "Minimal web app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "rm -rf build && webpack -p --config webpack.config.prod.js",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "ghp-build": "parcel build ./src/index.html --out-dir build/ --public-url ./build && cp ./build/index.html ./index.html",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
-    "deploy": "./scripts/gh_pages.sh",
     "test": "jest --coverage --no-cache"
   },
   "author": "Regis Boudinot (selfup)",
@@ -31,28 +31,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
-    "@babel/preset-env": "^7.3.1",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
-    "babel-plugin-dynamic-import-webpack": "^1.0.2",
-    "babel-plugin-transform-react-jsx": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.0",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jest": "^21.7.0",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^3.2.0",
     "imports": "^1.0.0",
     "jest": "^24.1.0",
     "node-libs-browser": "^2.0.0",
-    "script-ext-html-webpack-plugin": "^2.0.1",
-    "uglifyjs-webpack-plugin": "^1.2.4",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^3.2.1"
+    "parcel": "^1.11.0"
   }
 }
