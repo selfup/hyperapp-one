@@ -12,17 +12,18 @@ beforeEach(() => {
 });
 
 test('Counter test', (done) => {
-  const view = (state, actions) => h(
-    'div',
-    {
-      oncreate() {
-        expect(!document.body.innerHTML.includes('0')).toBe(true);
-        expect(document.body.innerHTML.includes('1')).toBe(true);
-        done();
+  const view = (state, actions) =>
+    h(
+      'div',
+      {
+        oncreate() {
+          expect(!document.body.innerHTML.includes('0')).toBe(true);
+          expect(document.body.innerHTML.includes('1')).toBe(true);
+          done();
+        },
       },
-    },
-    [Counter(state, actions)],
-  );
+      [Counter(state, actions)],
+    );
 
   const main = app(appState, appActions, view, document.body);
 
@@ -30,17 +31,18 @@ test('Counter test', (done) => {
 });
 
 test('Counter test', (done) => {
-  const view = (state, actions) => h(
-    'div',
-    {
-      oncreate() {
-        expect(!document.body.innerHTML.includes('0')).toBe(true);
-        expect(document.body.innerHTML.includes('-1')).toBe(true);
-        done();
+  const view = (state, actions) =>
+    h(
+      'div',
+      {
+        oncreate() {
+          expect(!document.body.innerHTML.includes('0')).toBe(true);
+          expect(document.body.innerHTML.includes('-1')).toBe(true);
+          done();
+        },
       },
-    },
-    [Counter(state, actions)],
-  );
+      [Counter(state, actions)],
+    );
 
   const main = app(appState, appActions, view, document.body);
 
