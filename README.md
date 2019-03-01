@@ -48,7 +48,7 @@ All tests are in the root `test` directory. :tada:
 
 ## Development
 
-Access [localhost:8080/webpack-dev-server](http://localhost:8080/webpack-dev-server/index.html).
+Access [localhost:1234](http://localhost:1234).
 
 The browser will reload as you save new code. 🚀
 
@@ -111,10 +111,6 @@ As you may have noticed I don't use [prettier](https://github.com/prettier/prett
 I just like how strict AirBnb is, and how it forces you to learn certain ways of doing things manually. It also enforces rules that make it so git diffs are less of a pain to go through. VSCode and Atom have options to have ESLint auto correct (as much as it can) the formatting via the ESLint plugin.
 
 I also use JSX instead of the built-in `h` function, because to me it is easier to go through Code Reviews with, and is _stylistically_ more pleasing to me. It also helps with UX teams as they know HTML, and JSX is closer to HTML than pure `h` calls. See [@hyperapp/html](https://github.com/hyperapp/html) for another alternative to JSX.
-
-## Less Strict Alternative
-
-If you are not a fan of Webpack configuration or AirBnb ESLint, I made a similar boilerplate based off of Parcel and JSX but without a linter: [Hyperapp One Parcel](https://github.com/selfup/hyperapp-one-parcel)
 
 ## License
 

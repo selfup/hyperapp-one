@@ -2,7 +2,7 @@ GH_PAGES=$(git branch | grep gh-pages)
 
 function buildCommitAndPushToGhPages() {
   git merge master \
-    && npm run build \
+    && npm run ghp-build \
     && git add . \
     && git commit -m "built" \
     && git push origin gh-pages -f \
