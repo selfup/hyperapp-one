@@ -1,21 +1,13 @@
 import { app } from 'hyperapp';
-
+import '../styles/app.css';
 import actions from './actions';
 import state from './state';
 import view from './components/Counter';
 
-const appArgs = [
-  state,
-  actions,
-  view,
-  document.getElementById('app'),
-];
+const appArgs = [state, actions, view, document.getElementById('app')];
 
 function onMount(main) {
-  const {
-    add,
-    sub,
-  } = main;
+  const { add, sub } = main;
 
   /**
    * Hyperapp wires your actions so the view is re-rendered every time the state
@@ -32,12 +24,11 @@ function onMount(main) {
 let main;
 
 if (process.env.NODE_ENV !== 'production') {
-  import('hyperapp-redux-devtools')
-    .then((devtools) => {
-      main = devtools(app)(...appArgs);
+  import('hyperapp-redux-devtools').then((devtools) => {
+    main = devtools(app)(...appArgs);
 
-      onMount(main);
-    });
+    onMount(main);
+  });
 } else {
   main = app(...appArgs);
 

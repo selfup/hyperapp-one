@@ -1,8 +1,8 @@
 # Hyperapp One
 
-[![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
+[![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com 'Join us')
 
-Hyperapp One is a Webpack boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
+Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
 
 Redux Dev Tools support is included as well :smile:
 
@@ -16,16 +16,16 @@ Redux Dev Tools support is included as well :smile:
 
 <!-- TOC -->
 
-* [Installing](#installing)
-* [Testing](#testing)
-* [Development](#development)
-  * [Wiping the Commit History](#wiping-the-commit-history)
-  * [Deploying to GitHub Pages](#deploying-to-github-pages)
-    * [First Time](#first-time)
-    * [Every Time After](#every-time-after)
-* [Stylistic Differences](#stylistic-differences)
-* [Less Strict Alternative](#less-strict-alternative)
-* [License](#license)
+- [Installing](#installing)
+- [Testing](#testing)
+- [Development](#development)
+  - [Wiping the Commit History](#wiping-the-commit-history)
+  - [Deploying to GitHub Pages](#deploying-to-github-pages)
+    - [First Time](#first-time)
+    - [Every Time After](#every-time-after)
+- [Stylistic Differences](#stylistic-differences)
+- [Less Strict Alternative](#less-strict-alternative)
+- [License](#license)
 
 <!-- /TOC -->
 
@@ -48,7 +48,7 @@ All tests are in the root `test` directory. :tada:
 
 ## Development
 
-Access [localhost:8080/webpack-dev-server](http://localhost:8080/webpack-dev-server/index.html).
+Access [localhost:1234](http://localhost:1234).
 
 The browser will reload as you save new code. 🚀
 
@@ -90,7 +90,7 @@ git remote add origin <ssh_or_https_url>
 This will be interactive as it merges `master` into the `gh-pages` branch :pray:
 
 ```bash
-npm run deploy
+./scripts/gh_pages.sh
 ```
 
 Sometimes it will say there is nothing to commit even though you have more commits.
@@ -99,8 +99,8 @@ Just do a `git push` or a `git push -f` and then check back out to master :pray:
 
 **Now visit**:
 
-* No custom domain: `yourUserName.github.io/yourRepoName`
-* With a custom domain: `yourCustomDomain/yourRepoName`
+- No custom domain: `yourUserName.github.io/yourRepoName`
+- With a custom domain: `yourCustomDomain/yourRepoName`
 
 ## Stylistic Differences
 
@@ -111,10 +111,6 @@ As you may have noticed I don't use [prettier](https://github.com/prettier/prett
 I just like how strict AirBnb is, and how it forces you to learn certain ways of doing things manually. It also enforces rules that make it so git diffs are less of a pain to go through. VSCode and Atom have options to have ESLint auto correct (as much as it can) the formatting via the ESLint plugin.
 
 I also use JSX instead of the built-in `h` function, because to me it is easier to go through Code Reviews with, and is _stylistically_ more pleasing to me. It also helps with UX teams as they know HTML, and JSX is closer to HTML than pure `h` calls. See [@hyperapp/html](https://github.com/hyperapp/html) for another alternative to JSX.
-
-## Less Strict Alternative
-
-If you are not a fan of Webpack configuration or AirBnb ESLint, I made a similar boilerplate based off of Parcel and JSX but without a linter: [Hyperapp One Parcel](https://github.com/selfup/hyperapp-one-parcel)
 
 ## License
 
