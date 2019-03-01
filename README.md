@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com 'Join us')
 
-Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
+Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, Prettier, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
 
 Redux Dev Tools support is included as well :smile:
 
