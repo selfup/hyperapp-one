@@ -16,17 +16,31 @@
     "hyperapp": "^1.2.9",
     "hyperapp-redux-devtools": "^1.1.6"
   },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      [
+        "@babel/transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
+  },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^8.2.5",
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.2",
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "babel-plugin-transform-react-jsx": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.0",
-    "eslint": "^4.19.1",
+    "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jest": "^21.7.0",
@@ -34,11 +48,11 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "imports": "^1.0.0",
-    "jest": "^22.1.4",
+    "jest": "^24.1.0",
     "node-libs-browser": "^2.0.0",
     "script-ext-html-webpack-plugin": "^2.0.1",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.2.1"
   }
 }
