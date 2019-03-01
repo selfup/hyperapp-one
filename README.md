@@ -24,7 +24,6 @@ Redux Dev Tools support is included as well :smile:
     - [First Time](#first-time)
     - [Every Time After](#every-time-after)
 - [Stylistic Differences](#stylistic-differences)
-- [Less Strict Alternative](#less-strict-alternative)
 - [License](#license)
 
 <!-- /TOC -->
