@@ -1,0 +1,2 @@
+body{font-family:sans-serif;min-height:100vh;margin:0;font-size:calc(10px + 2vmin)}body,section{display:flex;justify-content:center;align-items:center}section>*+*{margin-left:2rem}button{padding:0 1rem;border:none;font-size:2rem;height:3rem}h1{font-size:calc(20px + 6vmin);margin-bottom:1rem}h1,p{text-align:center}.count,h1,p{margin-top:0}.count{margin-bottom:0;font-size:4rem;color:#333}[disabled]+.count{color:#999}.add{background-color:#3cb371}.add,.sub{color:#fff}.sub{background-color:#c71585}.sub[disabled]{opacity:.5}
+/*# sourceMappingURL=build/src.90a34b2e.css.map */
