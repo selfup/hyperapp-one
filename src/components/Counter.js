@@ -1,5 +1,6 @@
 import { h } from 'hyperapp';
 import Description from './Description';
+import { add, sub } from './../actions';
 
 /**
  * first object in the store is 'state' (an object - {})
@@ -7,7 +8,7 @@ import Description from './Description';
  * here we destructure what is needed
  * 'num' from 'state' and 'add'/'sub' from 'actions'
  */
-export default ({ num }, { add, sub }) => (
+export default ({ num }) => (
   <div class="counter">
     <Description />
     <section>
