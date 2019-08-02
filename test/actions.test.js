@@ -1,7 +1,7 @@
-import actions from './../src/actions';
+import { add, sub } from './../src/actions';
 
 test('Actions add', () => {
-  const addResult = actions.add()({ num: 0 });
+  const addResult = add({ num: 0 });
 
   expect(addResult).toEqual({
     num: 1,
@@ -9,7 +9,7 @@ test('Actions add', () => {
 });
 
 test('Actions sub', () => {
-  const addResult = actions.sub()({ num: 1 });
+  const addResult = sub({ num: 1 });
 
   expect(addResult).toEqual({
     num: 0,
