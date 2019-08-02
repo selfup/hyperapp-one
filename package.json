@@ -1,7 +1,7 @@
 {
   "name": "hyperapp-one",
-  "version": "1.0.1",
-  "description": "Minimal web app",
+  "version": "2.0.0",
+  "description": "Hyperapp One is a Parcel boilerplate for quickstarting a web application with Hyperapp, JSX, Prettier, and Airbnb's JavaScript Styleguide via ESLint.",
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
