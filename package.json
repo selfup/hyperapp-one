@@ -13,7 +13,7 @@
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
   "dependencies": {
-    "hyperapp": "^1.2.9",
+    "hyperapp": "^1.2.10",
     "hyperapp-redux-devtools": "^1.1.6"
   },
   "babel": {
@@ -30,19 +30,19 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.4.3",
-    "babel-eslint": "^10.0.1",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jest": "^21.27.2",
-    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react": "^7.18.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "imports": "^1.0.0",
-    "jest": "^24.7.1",
-    "node-libs-browser": "^2.2.0",
-    "parcel": "^1.12.3"
+    "jest": "^24.9.0",
+    "node-libs-browser": "^2.2.1",
+    "parcel": "^1.12.4"
   }
 }
