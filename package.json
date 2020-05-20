@@ -30,19 +30,11 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.9.6",
     "@babel/plugin-transform-react-jsx": "^7.9.4",
-    "@babel/preset-env": "^7.9.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^21.27.2",
-    "eslint-plugin-react": "^7.19.0",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "@babel/preset-env": "^7.9.6",
     "imports": "^1.0.0",
-    "jest": "^25.2.3",
-    "node-libs-browser": "^2.2.1",
+    "jest": "^25.5.4",
     "parcel": "^1.12.4"
   }
 }
