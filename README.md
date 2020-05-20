@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com 'Join us')
 
-Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp V1](https://github.com/jorgebucaran/hyperapp/tree/V1), JSX, Parcel, and Prettier.
+Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp V1](https://github.com/jorgebucaran/hyperapp/tree/V1), JSX, and Prettier.
 
 <div align=center>
   <a href=http://selfup.github.io/hyperapp-one>
