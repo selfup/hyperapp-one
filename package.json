@@ -16,6 +16,14 @@
     "hyperapp": "^1.2.10",
     "hyperapp-redux-devtools": "^1.1.6"
   },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "imports": "^1.0.0",
+    "jest": "^25.5.4",
+    "parcel": "^1.12.4"
+  },
   "babel": {
     "presets": [
       "@babel/env"
@@ -28,13 +36,5 @@
         }
       ]
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-transform-react-jsx": "^7.9.4",
-    "@babel/preset-env": "^7.9.6",
-    "imports": "^1.0.0",
-    "jest": "^25.5.4",
-    "parcel": "^1.12.4"
   }
 }
