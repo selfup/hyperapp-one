@@ -5,7 +5,7 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html --public-url ./",
-    "ghp-build": "parcel build ./src/index.html --out-dir build/ --public-url ./build && cp ./build/index.html ./index.html",
+    "ghp-build": "parcel build ./src/index.html --dist-dir build/ --public-url ./build && cp ./build/index.html ./index.html",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
     "test": "jest --coverage --no-cache"
   },
