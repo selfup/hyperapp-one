@@ -2,7 +2,6 @@
   "name": "hyperapp-one",
   "version": "1.0.1",
   "description": "Minimal web app",
-  "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html --public-url ./",
@@ -21,8 +20,9 @@
     "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "imports": "^1.0.0",
-    "jest": "^25.5.4",
-    "parcel": "^1.12.4"
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "parcel": "^2.8.0"
   },
   "babel": {
     "presets": [
