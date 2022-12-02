@@ -13,7 +13,7 @@ test('Description component renders', () => {
       {
         children: [
           {
-            children: ['With JSX and Webpack'],
+            children: ['With JSX and Parcel'],
             nodeName: 'em',
             attributes: {},
             key: null,

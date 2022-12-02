@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/selfup/hyperapp-one.svg?branch=master)](https://travis-ci.org/selfup/hyperapp-one) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com 'Join us')
 
-Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp](https://github.com/hyperapp/hyperapp), JSX, Prettier, and Airbnb's JavaScript [Styleguide](https://github.com/airbnb/javascript) via ESLint.
+Hyperapp One is a Parcel boilerplate for quickstarting a web application with [Hyperapp V1](https://github.com/jorgebucaran/hyperapp/tree/V1), JSX, and Prettier.
 
 <div align=center>
   <a href=http://selfup.github.io/hyperapp-one>
@@ -25,7 +25,6 @@ Redux Dev Tools support is included as well :smile:
   - [Deploying to GitHub Pages](#deploying-to-github-pages)
     - [First Time](#first-time)
     - [Every Time After](#every-time-after)
-- [Stylistic Differences](#stylistic-differences)
 - [License](#license)
 
 <!-- /TOC -->
@@ -102,16 +101,6 @@ Just do a `git push` or a `git push -f` and then check back out to master :pray:
 
 - No custom domain: `yourUserName.github.io/yourRepoName`
 - With a custom domain: `yourCustomDomain/yourRepoName`
-
-## Stylistic Differences
-
-As you may have noticed I don't use [Standard](https://github.com/standard/standard). I prefer [ESLint](https://github.com/eslint/eslint) and [AirBnb](https://github.com/airbnb/javascript) as well as [Prettier](https://prettier.io/).
-
-**Feel free to change this.** You can easily remove `.eslintrc.js` and code without a linter, as well as remove all `eslint` packages in the `package.json`!
-
-I just like how strict AirBnb is, and how it forces you to learn certain ways of doing things manually. It also enforces rules that make it so git diffs are less of a pain to go through. VSCode and Atom have options to have ESLint auto correct (as much as it can) JS strictness. Prettier just makes everything consistent and pretty :smile:
-
-I also use JSX instead of the built-in `h` function, because to me it is easier to go through Code Reviews with, and is _stylistically_ more pleasing to me. It also helps with UX teams as they know HTML, and JSX is closer to HTML than pure `h` calls. See [@hyperapp/html](https://github.com/hyperapp/html) for another alternative to JSX.
 
 ## License
 
