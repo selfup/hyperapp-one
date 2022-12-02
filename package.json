@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.10.4",
     "imports": "^1.0.0",
     "jest": "^25.5.4",
-    "parcel": "^1.12.4"
+    "parcel": "^2.8.0"
   },
   "babel": {
     "presets": [
